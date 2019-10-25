@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI</family>
+    <pointsize>14</pointsize>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>А3139 Стенд испытания пневматики</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="vbox">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="manometers" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>150</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="table" native="true">
+      <layout class="QHBoxLayout" name="hbox">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="StackedMenu" name="menu" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="text">
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="img">
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="graph" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="BtnPanel" name="btn_panel" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StackedMenu</class>
+   <extends>QWidget</extends>
+   <header>src.asemenu.h</header>
+   <container>1</container>
+   <slots>
+    <slot>up_clicked()</slot>
+    <slot>down_clicked()</slot>
+    <slot>ok_clicked()</slot>
+    <slot>back_clicked()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>BtnPanel</class>
+   <extends>QWidget</extends>
+   <header>src.btnpanel.h</header>
+   <container>1</container>
+   <slots>
+    <signal>yes_clicked()</signal>
+    <signal>no_clicked()</signal>
+    <signal>up_clicked()</signal>
+    <signal>down_clicked()</signal>
+    <signal>run_clicked()</signal>
+    <signal>back_clicked()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_panel</sender>
+   <signal>back_clicked()</signal>
+   <receiver>menu</receiver>
+   <slot>back_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_panel</sender>
+   <signal>down_clicked()</signal>
+   <receiver>menu</receiver>
+   <slot>down_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_panel</sender>
+   <signal>up_clicked()</signal>
+   <receiver>menu</receiver>
+   <slot>up_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_panel</sender>
+   <signal>yes_clicked()</signal>
+   <receiver>menu</receiver>
+   <slot>ok_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>659</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>yes_clicked()</slot>
+  <slot>no_clicked()</slot>
+  <slot>up_clicked()</slot>
+  <slot>down_clicked()</slot>
+  <slot>back_clicked()</slot>
+  <slot>run_clicked()</slot>
+ </slots>
+</ui>
