@@ -26,10 +26,9 @@ class Ui_MainMenu(object):
 class MainMenu(Menu):
     def __init__(self, parent=None, caption='Главное меню', *args):
         super().__init__(parent=parent, caption=caption, *args)
-        self.ku215 = MenuItem('Испытание крана управления КУ 215')
-        self.addMenuItem(self.ku215)
-        self.rd042 = MenuItem('Испытание реле давления РД 042')
-        self.addMenuItem(self.rd042)
+        self.ku215 = self.addMenuItem(MenuItem('Испытание крана управления КУ 215'))
+        self.rd042 = self.addMenuItem(MenuItem('Испытание реле давления РД 042'))
+        
         self.btp020 = MenuItem('Испытание блока тормозных приборов БТП 020')
         self.addMenuItem(self.btp020)
         self.keb208 = MenuItem('Испытание клапана электрокалибровочного КЭБ 208')

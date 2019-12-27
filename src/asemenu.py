@@ -109,10 +109,12 @@ class Menu(QtWidgets.QWidget):
         self.vbox.addSpacing(40)
         self.first()
 
-    def addMenuItem(self, item: MenuItem) -> None:
+    def addMenuItem(self, item: MenuItem) -> MenuItem:
         self.items.append(item)
         self.vbox.addWidget(item)
         item.entered.connect(self.onEnter)
+        return item
+		
 
     def onEnter(self) -> None:
         item: MenuItem = self.sender()

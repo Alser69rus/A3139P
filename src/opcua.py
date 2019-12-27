@@ -48,10 +48,10 @@ class AnalogType(ObjectType):
         self.frm_str = '{:f}'
         self.cov_increment: float = 0
 
-    def textValue(self) -> str:
+    def text_value(self) -> str:
         return self.frm_str.format(self.value)
 
-    def textValueWithUnit(self) -> str:
+    def text_value_with_unit(self) -> str:
         return self.textValue() + ' ' + self.engineering_unit
 
 
@@ -65,6 +65,8 @@ class AnalogInputType(AnalogType):
         self.high = high
         self.value = self.low
         self.old_value = self.value
+
+
 
     @pyqtSlot(float)
     def setValue(self, value: float):
@@ -81,3 +83,43 @@ class AnalogInputType(AnalogType):
             self.old_value = self.value
             self.change_of_value.emit(self.value)
         self.updated.emit(self.value)
+
+
+class AnalogOutputType(AnalogType):
+    pass
+
+
+class AnalogValueType(AnalogType):
+    pass
+
+
+class BinaryType(ObjectType):
+    pass
+
+
+class BinaryInputType(BinaryType):
+    pass
+
+
+class BinaryOutputType(BinaryType):
+    pass
+
+
+class BinaryValueType(BinaryType):
+    pass
+
+
+class MultiStateType(ObjectType):
+    pass
+
+
+class MultiStateInputType(MultiStateType):
+    pass
+
+
+class MultiStateOutputType(MultiStateType):
+    pass
+
+
+class MultiStateValueType(MultiStateType):
+    pass
